@@ -1,7 +1,4 @@
 #!/bin/bash
-# Exit on errors
-set -e
-
 # See https://github.com/cvg/Hierarchical-Localization/tree/master/hloc/pipelines/7Scenes#installation
 export dataset=datasets/7scenes
 for scene in chess fire heads office pumpkin redkitchen stairs; \
