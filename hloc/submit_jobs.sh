@@ -9,7 +9,7 @@ do
 #SBATCH -c 2
 module load Mambaforge/23.3.1-1-hpc1-bdist
 mamba activate hloc
-python -m hloc.pipelines.7Scenes.pipeline --scenes chess
+python -m hloc.pipelines.7Scenes.pipeline --scenes $scene
 EOT
   chmod +x $scene.sh
   echo "Submitting job for scene '$scene'"
