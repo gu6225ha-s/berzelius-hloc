@@ -6,7 +6,7 @@ do
 #SBATCH -J hloc-$scene
 #SBATCH -t 12:00:00
 #SBATCH --mem=10000
-#SBATCH -n 2
+#SBATCH -c 2
 module load Mambaforge/23.3.1-1-hpc1-bdist
 mamba activate hloc
 python -m hloc.pipelines.7Scenes.pipeline --scenes chess
