@@ -1,0 +1,34 @@
+Bootstrap: docker
+From: nvidia/cuda:11.7.1-cudnn8-devel-ubuntu22.04
+
+%environment
+
+export PATH=/opt/mambaforge/bin:$PATH
+export PYTHONNOUSERSITE=True
+
+%post
+
+apt-get update && apt-get install -y --no-install-recommends \
+git \
+nano \
+wget \
+curl \
+build-essential \
+cmake \
+libx11-dev \
+libxext6 \
+libglu1-mesa-dev
+
+# Install Mambaforge
+cd /tmp
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+bash Mambaforge-$(uname)-$(uname -m).sh -fp /opt/mambaforge -b
+rm Mambaforge*sh
+
+export PATH=/opt/mambaforge/bin:$PATH
+
+# Install hloc
+cd /opt
+git clone --recursive https://github.com/cvg/Hierarchical-Localization/
+cd Hierarchical-Localization/
+python -m pip install -e .
