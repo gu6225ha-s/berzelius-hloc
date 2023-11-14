@@ -11,7 +11,7 @@ Create a virtual environment with hloc
 
 Download the 7-Scenes dataset
 ```
-./7scenes_install.sh
+../7scenes_install.sh
 ```
 
 Submit batch jobs
