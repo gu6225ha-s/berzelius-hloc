@@ -5,7 +5,7 @@ do
 #!/bin/bash
 #SBATCH --job-name hloc-$scene
 #SBATCH --time 12:00:00
-#SBATCH --reservation 3g.20gb
+#SBATCH --reservation 1g.10gb
 apptainer exec --nv hloc.sif python -m hloc.pipelines.7Scenes.pipeline --scenes $scene
 EOT
   chmod +x $scene.sh
