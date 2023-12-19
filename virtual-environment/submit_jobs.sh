@@ -5,7 +5,7 @@ do
 #!/bin/bash
 #SBATCH --job-name hloc-$scene
 #SBATCH --time 12:00:00
-#SBATCH --reservation 3g.20gb
+#SBATCH --reservation 1g.10gb
 module load Mambaforge/23.3.1-1-hpc1-bdist
 mamba activate hloc
 python -m hloc.pipelines.7Scenes.pipeline --scenes $scene
